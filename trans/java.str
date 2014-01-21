@@ -6,8 +6,15 @@ imports
   libstratego-aterm
   include/Java
   lib/editor-common.generated
+  pretty-print
 
 rules
+
+	editor-format:
+		(selected, position, ast, path, project-path) -> (filename, result)
+		with
+			filename := <guarantee-extension(|"pp.jav")> path;
+			result := <pp-java-string> selected
 
   // Prints the abstract syntax ATerm of a selection.
   debug-show-aterm:
@@ -15,3 +22,5 @@ rules
     with
       filename := <guarantee-extension(|"aterm")> path;
       result   := selected
+      
+      

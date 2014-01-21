@@ -2,8 +2,7 @@ module pp/main
 imports
   libstratego-lib
   libstratego-gpp
-  java/signature/v5
-  java/signature/eblock
+  include/Java
   
   pp/helpers
   pp/statement
@@ -23,7 +22,7 @@ imports
   pp/interface/annotation
   pp/interface/annotation-type
   
-  pp/parenthesize
+  include/java-parenthesize
 
 strategies
 
@@ -45,7 +44,7 @@ strategies
    *                    overriding the default pretty printing rules.
    */
   pp-java5-to-abox(extension) =    
-    parenthesize-Java5
+    parenthesize-Java
     ; topdown(
         try(very-special-conflict)
         ; try(pp-comments(extension <+ java-to-box))
@@ -236,8 +235,8 @@ rules
            <int-to-string> i => s
        \})> alts => alts'
 
-  java-to-box :
-    PreEBlock(stms, e) -> V vs=0 [ V is=2 ["{|" ~*stms] H hs=1 ["|" ~e "|}"]]
+  // java-to-box :
+  //   PreEBlock(stms, e) -> V vs=0 [ V is=2 ["{|" ~*stms] H hs=1 ["|" ~e "|}"]]
 
 signature
   constructors

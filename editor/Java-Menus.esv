@@ -7,3 +7,4 @@ menus
   menu: "Syntax"
   
     action: "Show abstract syntax" = debug-show-aterm (openeditor) (realtime) (meta) (source)
+    action: "Format" = editor-format (openeditor) (realtime) (meta) (source)

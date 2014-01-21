@@ -25,9 +25,9 @@ strategies
    * @param Stream
    * @type Java -> Stream
    */
-  pp-java-stream(|stream) =
-    pp-java-box
-    ; box2text-stream(|80, stream)
+  // pp-java-stream(|stream) =
+  //   pp-java-box
+  //   ; box2text-stream(|80, stream)
 
   /**
    * Pretty-prints the Java AST to a Box representation.
