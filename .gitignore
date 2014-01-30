@@ -22,5 +22,4 @@ syntax/Java.generated.pp
 utils
 lib/*.generated.str
 lib-refactoring/*.generated.str
-/include
 /lib/runtime
